@@ -29,10 +29,7 @@ def analyze():
                     POS_TAG[b] += 1
                 else:                   # jika keterangan belum ada dalam dictionary maka set jumlah keterangan dengan 1
                     POS_TAG[b] = 1
-    for i in range(len(TAGGED)):        
-        for a, b in TAGGED[i]:          
-            if b != '.':
-                count += 1              # menghitung jumlah seluruh keterangan
+                count += 1              # menghitung jumlah seluruh keterangan   
     for a, b in POS_TAG.items():        # loop untuk POST_TAG dictionary
         POS_TAG[a] = b/count            # jumlah masing masing keterangan dibagi dengan jumlah seluruh keterangan
 
@@ -40,7 +37,7 @@ def analyze():
 def visualize():
     label = list(POS_TAG.keys())        # keys dipisahkan dari dictionary menjadi label dalam pie chart
     value = list(POS_TAG.values())      # values dipisahkan dari dictionary menjadi value dalam pie chart
-    plt.pie(value, labels = label)
+    plt.pie(value,labels=label)
     plt.show() 
 
 def main():
